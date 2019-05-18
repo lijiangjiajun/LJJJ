@@ -1,0 +1,18 @@
+#define  _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+	int a ,i, s=0 ,k;
+	printf("请输入十以内的数字");
+	scanf("%d", &a);
+	k = a;
+	for (i = 0; i < 5; i++)
+	{
+		k = k * 10 * i +k;
+		s += k;
+	}
+	printf("前五项和为%d ", s);
+	system("pause");
+	return 0;
+}
