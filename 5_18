@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+	int i, j, k, m, n;
+	for (i = 1; i <= 7; i++)
+	{
+		for (j = 1; j <= 7 - i; j++)
+		{
+			printf(" ");
+		}
+		for (k = 1; k <= 2 * i - 1; k++)
+		{
+			printf("*");
+		}
+		printf("\n");
+	}
+	for (i = 1; i <= 6; i++)
+	{
+		for (m = 1; m <= i; m++)
+		{
+			printf(" ");
+		}
+		for (n = 1; n <= 13 - 2 * i; n++)
+		{
+			printf("*");
+		}
+		printf("\n");
+	}
+	system("pause");
+	return 0;
+}
