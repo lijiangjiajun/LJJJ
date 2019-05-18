@@ -1,0 +1,27 @@
+#define  _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <stdlib.h>
+fox(x)
+{
+	return x*x*x;
+}
+int main()
+{
+	int a ,i ,j, k;
+	printf("请输入一个三位字");
+	scanf("%d", &a);
+	i = a / 100;
+	j = (a % 100 )/10;
+	k = (a % 10) % 10;
+	if (fox(i) + fox(j) + fox(k)==a)
+	{
+		printf("是水仙花数");
+	}
+	else
+	{
+		printf("不是水仙花数");
+	}
+	system("pause");
+	return 0;
+
+}
