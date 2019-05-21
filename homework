@@ -1,0 +1,188 @@
+1.#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+void fox()
+{
+	int b = 0, c = 0;
+	printf("请输入1-100的数字");
+	b = rand();
+	b = b % 100 + 1;
+	scanf("%d", &c);
+	while (1)
+	{
+		if (c > b)
+		{
+			printf("太大了");
+			scanf("%d", &c);
+		}
+		if (c < b)
+		{
+			printf("太小了");
+			scanf("%d", &c);
+		}
+		else
+		{
+			printf("猜对了");
+			break;
+		}
+	}
+}
+
+int main() 
+{
+	int a=0;
+	printf("输入0退出  输入1开始游戏 ");
+	srand((unsigned int)time(NULL));
+	scanf("%d", &a);
+	while (1)
+	{
+
+		if (a == 1)
+		{
+			fox();
+			break;
+		}
+		if (a == 0)
+		{
+			printf("退出成功");
+			break;
+		}
+		else
+			printf("输入错误，请重新输入");
+		scanf("%d", &a);
+	}
+	system("pause");
+	return 0;
+}
+
+
+2.
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <stdlib.h>
+int fox(int sz,int* a,int b)
+{
+	int middle = 0;
+	int left = 0;
+	int right = sz;
+	while (left <= right)
+	{
+		middle = left + (right - left) / 2;
+		if (b>a[middle])
+		{
+			left=middle+1;
+		}
+		else if (b<a[middle])
+		{
+			right=middle-1;
+		}
+		else  if (a[middle] == b)
+		{
+			break;
+		}
+	}
+	if (left>right)
+	{
+		return -1;
+	}
+	return middle;
+	
+}
+int main()
+{
+	int  c,b,sz;
+	int a[10] = { 0,2,4,6,8,10,12,14,16,18 };
+	printf("请输入数字");
+	scanf("%d", &b);
+	sz = sizeof(a) / sizeof(a[0]) - 1;
+	c= fox(sz,a,b);
+	if (c == -1)
+	{
+		printf("找不到");
+	}
+	else
+	{
+		printf("%d ", c);
+	}
+	
+
+	system("pause");
+	return 0;
+
+}
+
+
+3.
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main()
+{
+	char a[20] = { 0 };
+	int b = 0;
+	printf("请输入密码");
+	scanf("%s", a);
+	while (b < 2)
+	{
+	if (strcmp(a, "1234567890") == 0)
+	{
+		printf("登陆成功\n");
+		break;
+	}
+	else
+	{
+		
+		printf("请输入密码");
+		scanf("%s", a);
+		b++;
+	}
+	if (b == 2)
+	{
+		printf("密码错误\n");
+	}
+}
+	system("pause");
+	return 0;
+}
+
+
+4.
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include<ctype.h>
+int main()
+{
+	char a[20] = { 0 };
+	int  i=0;
+	scanf("%s", &a);
+	for (i = 0; i < 20; i++)
+	{
+		if ('a' <= a[i] && a[i] <= 'z')
+		{
+            a[i] = toupper(a[i]);
+			printf("%c", a[i]);
+		}
+		else if ('A' <= a[i] && a[i] <= 'Z')
+		{
+			a[i] = tolower(a[i]);
+			printf("%c", a[i]);
+		}
+		else if ('0' <= a[i] && a[i] <= '9')
+		{
+			printf("\0");
+		}
+		else
+		{
+			printf("%c", a[i]);
+		}
+	
+	}
+	
+	system("pause");
+	return 0;
+}
