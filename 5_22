@@ -1,0 +1,110 @@
+1.
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <stdlib.h>
+
+void fox()
+{
+	int i;
+	int j;
+	int a;
+	scanf("%d", &a);
+	for (i = 1; i <= a; i++)
+	{
+		for (j = 1; j <= i; j++)
+			printf("%d * %d = %2d ", j, i, i*j);
+	     	printf("\n");
+	}
+	return 0;
+}
+
+int main()
+{
+	
+	fox();
+	system("pause");
+	return 0;
+}
+
+
+2.
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <stdlib.h>
+
+ void  exchange(int* a,int* b)
+{
+	 int tmp;
+	 tmp = *a;
+	 *a = *b;
+	 *b = tmp;
+
+}
+int main()
+{
+	int a = 10;
+	int b = 20;
+	
+	printf("a=%d,b=%d \n", a, b);
+	exchange(&a, &b);
+	printf("a=%d,b=%d ", a, b);
+	system("pause");
+	return 0;
+}
+
+3.
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <stdlib.h>
+
+void fox(int i)
+{
+	if ((i % 4 == 0 && i % 100 != 0) || i % 400 == 0)
+		printf("%d是闰年 ", i);
+	else
+		printf("%d不是闰年 ", i);
+}
+int main()
+{
+	int i;
+	scanf("%d", &i);
+	fox(i);
+	system("pause");
+	return 0;
+
+}
+
+
+4.
+
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+void init(int* p)
+{
+	int i;
+	int c = 0;
+	printf("请输入10个数字初始化数组");
+	for (i = 0; i <= 9; i++)
+	{
+		scanf("%d", &*(p + i));
+	}
+}
+
+
+
+
+int main()
+{
+	int a[10];
+	int i;
+	int sz = sizeof(a) / sizeof(a[0]);
+	init(a);
+	for(i = 0; i <= 9; i++)
+	{
+		printf("a[%d]=%d ", i,a[i]);
+	}
+	system("pause");
+	return 0;
+}
