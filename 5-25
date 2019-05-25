@@ -1,0 +1,98 @@
+1.
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <stdlib.h>
+
+int str(char*  a)
+{
+	int b=0;
+	while ((*a) != '\0')
+
+	{
+		a++;
+		b++;
+	}
+	return b;
+}
+int str_d(char* a)
+{
+	int b = 1;
+	int s = 0;
+	if (*a != '\0')
+		s = b + str_d(a + 1);
+	return s;
+	
+}
+
+
+int main()
+{
+	char a[10]="asdfghjkl";
+	int c;
+	
+	/*c = str(a);*/
+	c = str_d(a);
+	printf("%d ", c);
+	system("pause");
+	return 0;
+
+}
+
+2.
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <stdlib.h>
+//int fox(int n)
+//{
+//	int i = 0;
+//	int ret = 1;
+//	for (i = 1; i <=n; i++)
+//	{
+//		ret = ret*i;
+//	}
+//	return ret;
+//}
+int  Ret(int n)
+{
+	if (n == 1 && n == 0)
+	{
+		n = 1;
+
+	}
+	if (n > 1)
+	{
+		n = n*Ret(n - 1);
+	}
+	return n;
+}
+int main()
+{
+	int n;
+	scanf("%d", &n);
+	/*int c = fox(n);*/
+	int c = Ret(n);
+	printf("%d ",c);
+	system("pause");
+	return 0;
+}
+
+3.
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <stdlib.h>
+void Print(int n)
+{
+	if (n > 9)
+	{
+		Print(n / 10);
+	}
+	printf("%d ", n % 10);
+}
+int main()
+{
+	int n;
+	scanf("%d", &n);
+	Print(n);
+	system("pause");
+	return 0;
+}
