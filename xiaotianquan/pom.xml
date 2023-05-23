@@ -27,7 +27,7 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd"> <modelVersion>4.0.0</modelVersion>
 
             <artifactId>sqlite-jdbc</artifactId>
 
-            <version>3.28.0</version>
+            <version>3.41.2.2</version>
 
         </dependency>
 
